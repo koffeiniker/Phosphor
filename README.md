@@ -35,7 +35,7 @@ I want to create a workstation. It shall be ok for IT consultancy work. Thus:
   - ... whatever comes to my mind
 
 I tried a few Linux-distributions as a basis for my work, tried and failed, so I reverted to Ubuntu.
-At least, that one I know quite good ... at least I believe so.
+That one I know quite good ... at least I believe so.
 
 # Avoid busy work
 
