@@ -1,0 +1,38 @@
+---
+
+- name: ProDeck
+  hosts: all
+
+  roles:
+    - regolith
+    - googlechrome
+    - vscode
+    - thunderbird
+    - office
+    - media
+    - obs
+<<<<<<< HEAD
+    - communication
+=======
+>>>>>>> b45f559 (Added vlc and obs. First changes to regolith appearance and keybindings)
+
+  tasks:
+
+    - name: mc, screen, vim
+      apt:
+        name: 
+          - mc
+          - screen
+          - vim
+      become: true
+
+    - name: adding alias to bashrc
+      lineinfile:
+        path: ~/.bash_aliases
+        regex: "alias play="
+        line: "alias play=ansible-playbook"
+        create: yes
+      
+
+      
+      

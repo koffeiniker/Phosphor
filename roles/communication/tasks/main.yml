@@ -1,0 +1,4 @@
+- name: Slack (as snap)
+  snap:
+    name: slack
+  become: true

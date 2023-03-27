@@ -1,0 +1,15 @@
+---
+
+- name: Register the OBS repository
+  ansible.builtin.apt_repository:
+    filename: obs-repo
+    repo: "ppa:obsproject/obs-studio"
+  become: true
+
+
+- name: Install OBS Studio
+  apt:
+    name:
+      - ffmpeg
+      - obs-studio
+  become: true

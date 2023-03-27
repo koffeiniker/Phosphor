@@ -1,0 +1,70 @@
+---
+
+- name: Install regolith repository key
+  ansible.builtin.get_url:
+    url: "https://regolith-desktop.org/regolith.key"
+    dest: /usr/share/keyrings/regolith-archive-keyring.asc
+    mode: "0644"
+    force: true
+  become: true
+
+- name: Add the repo for regolith
+  ansible.builtin.apt_repository:
+    filename: regolith-repo
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.asc] https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main"
+    state: present
+  become: true
+
+- name: Install regolith-desktop
+  apt:
+    name:
+    - regolith-desktop
+    - regolith-compositor-picom-glx
+  become: true
+
+- name: Copy the Xresources
+  template:
+    src: Xresources
+    dest: ~/.Xresources
+    mode: "0644"
+  notify: refresh regolith-look
+<<<<<<< HEAD
+<<<<<<< HEAD
+  tags:
+    - xres
+=======
+>>>>>>> b45f559 (Added vlc and obs. First changes to regolith appearance and keybindings)
+=======
+  tags:
+    - xres
+>>>>>>> d6dadc5 (Updated the background for regolith)
+
+- name: Create the directory for the backgrounds
+  file:
+    path: ~/.Xbackgrounds
+    state: directory
+    mode: "0755"
+  notify: refresh regolith-look
+
+- name: Copy a number of background files
+  copy:
+    src: "{{ item }}"  
+    dest: ~/.Xbackgrounds
+    mode: "0644"
+  loop:
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d6dadc5 (Updated the background for regolith)
+    - sunset-1.png
+    - sunset-2.png
+    - sunset-3.png
+    - sunset-4.png
+<<<<<<< HEAD
+=======
+    - background-omen.jpg
+>>>>>>> b45f559 (Added vlc and obs. First changes to regolith appearance and keybindings)
+=======
+>>>>>>> d6dadc5 (Updated the background for regolith)
+  notify: refresh regolith-look
+

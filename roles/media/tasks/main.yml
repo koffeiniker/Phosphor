@@ -1,0 +1,6 @@
+---
+
+- name: VLC
+  apt:
+    name: vlc
+  become: true

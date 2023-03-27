@@ -1,0 +1,28 @@
+---
+
+- name: Install VScode repository key
+  ansible.builtin.get_url:
+    url: "https://packages.microsoft.com/keys/microsoft.asc"
+    dest: /usr/share/keyrings/vscode-archive-keyring.asc
+    mode: "0644"
+    force: true
+  become: true
+  tags: key
+
+# The name of the repo file is predefined.
+# The package itself will overwrite the repo-definition.
+# If you change the name to anything else, you will
+# likely end up with two conflicting repository definitions.
+#
+- name: Add the repo for vscode
+  ansible.builtin.apt_repository:
+    filename: vscode
+    repo: "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/vscode-archive-keyring.asc] https://packages.microsoft.com/repos/code stable main"
+    state: present
+  become: true
+
+- name: Install vscode
+  apt:
+    name:
+    - code
+  become: true

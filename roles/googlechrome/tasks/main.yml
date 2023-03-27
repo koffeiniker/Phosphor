@@ -1,0 +1,24 @@
+---
+
+- name: Install Google repository key
+  ansible.builtin.get_url:
+    url: "https://dl.google.com/linux/linux_signing_key.pub"
+    dest: /usr/share/keyrings/google-archive-keyring.asc
+    mode: "0644"
+    force: true
+  become: true
+  tags: key
+
+- name: Add the repo for Google
+  ansible.builtin.apt_repository:
+    filename: google-repo
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/google-archive-keyring.asc] http://dl.google.com/linux/chrome/deb/ stable main"
+    state: present
+  become: true
+
+- name: Install Google Chrome
+  apt:
+    name:
+    - google-chrome-stable
+    state: latest
+  become: true

@@ -1,0 +1,8 @@
+---
+
+- name: Install Thunderbird
+  apt:
+    name: 
+    - thunderbird-gnome-support
+    - thunderbird-locale-de
+  become: true

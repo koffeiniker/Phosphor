@@ -1,0 +1,8 @@
+---
+
+- name: Install libreoffice
+  apt:
+    name:
+    - libreoffice
+    - libreoffice-l10n-de
+  become: true
