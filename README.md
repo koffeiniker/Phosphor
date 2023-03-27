@@ -32,6 +32,10 @@ I want to create a workstation. It shall be ok for IT consultancy work. Thus:
   - virtualisation and containers
   - scripting
   - content-creation (at first for video-blogging, but who knows?)
+  - ... whatever comes to my mind
+
+I tried a few Linux-distributions as a basis for my work, tried and failed, so I reverted to Ubuntu.
+At least, that one I know quite good ... at least I believe so.
 
 # Avoid busy work
 
