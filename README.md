@@ -45,7 +45,7 @@ maintain your own version of this setup.
 
 # Go the cloud-way
 
-In MacOS you manually install pretty much manually and keep things alive with the Time-Machine-Backup.
+In MacOS you install pretty much manually and keep things alive with the Time-Machine-Backup.
 While this works, it is still not optimal.
 
 I try to got the cloud way: do not repair ... destroy and rebuild. As such, I assume a vanilla install
