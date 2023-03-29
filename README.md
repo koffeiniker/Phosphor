@@ -71,9 +71,8 @@ Development:
   - GIT
   - Python
   - TCL/Tk
-  - (PHP/Laravel)
-  - (Google Go)
-  - (Rust)
+
+Any development going further than this will better use a VM properly configured. This is for e.g. PHP/Laravel, Google Go, Rust. Remember that with a Vagrant VM you have a shared directory, so you can manage the source directly on the host and edit with Visual Studio Code.
 
 Too much for you? C'mon! What you do not need, you might just ignore. Don't tell me, that you care about a few GB more or less on your disk!
 
@@ -81,6 +80,8 @@ Content:
 
   - OBS Studio
   - ...
+
+I intend to have a complete suite to create Content for youtube e.g. as a vlog or training-video or alike. OBS Studio is also a good basis for any kind of video conference.
 
 Browser:
   - Google Chrome
