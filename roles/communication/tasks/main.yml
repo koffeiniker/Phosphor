@@ -2,3 +2,9 @@
   snap:
     name: slack
   become: true
+
+- name: Discord (as snap)
+  snap:
+    name: discord
+  become: true
+
