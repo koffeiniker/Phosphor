@@ -1,0 +1,29 @@
+---
+
+- name: Install Oracle Virtualbox repository key
+  ansible.builtin.get_url:
+    url: "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+    dest: "/usr/share/keyrings/virtualbox-archive-keyring.asc"
+    mode: "0644"
+    force: true
+  become: true
+  tags:
+    - vbox
+
+- name: Add the repo for Oracle Virtualbox
+  ansible.builtin.apt_repository:
+    filename: virtualbox
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/virtualbox-archive-keyring.asc] http://download.virtualbox.org/virtualbox/debian jammy contrib"
+    state: present
+  become: true
+  tags:
+    - vbox
+
+- name: Install Oracle Virtualbox
+  apt:
+    name:
+    - virtualbox-7.0
+    state: latest
+  become: true
+  tags:
+    - vbox

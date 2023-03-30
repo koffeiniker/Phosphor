@@ -12,6 +12,7 @@
     - media
     - obs
     - communication
+    - virtualbox
 
   tasks:
 
