@@ -1,29 +1,12 @@
 i3-wm.binding.exit_app: q
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 regolith.wallpaper.file: /home/prefect/.Xbackgrounds/{{ wallpaper }}
 regolith.wallpaper.options: zoom
 
 regolith.lockscreen.wallpaper.file: /home/prefect/.Xbackgrounds/{{ lockscreen }}
 regolith.lockscreen.wallpaper.options: zoom
 
-gnome.terminal.background-transparency-percent: 10
-=======
-regolith.wallpaper.file: /home/prefect/.Xbackgrounds/background-omen.jpg
-=======
-regolith.wallpaper.file: /home/prefect/.Xbackgrounds/{{ wallpaper }}
->>>>>>> d6dadc5 (Updated the background for regolith)
-regolith.wallpaper.options: zoom
-
-regolith.lockscreen.wallpaper.file: /home/prefect/.Xbackgrounds/{{ lockscreen }}
-regolith.lockscreen.wallpaper.options: zoom
-
-<<<<<<< HEAD
-gnome.terminal.background-transparency-percent: 50
->>>>>>> b45f559 (Added vlc and obs. First changes to regolith appearance and keybindings)
-=======
-gnome.terminal.background-transparency-percent: 10
->>>>>>> d6dadc5 (Updated the background for regolith)
 gnome.terminal.use-transparent-background: true
+gnome.terminal.background-transparency-percent: 10
+
 
