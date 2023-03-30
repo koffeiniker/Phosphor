@@ -13,6 +13,7 @@
     - obs
     - communication
     - virtualbox
+    - hashicorp
 
   tasks:
 

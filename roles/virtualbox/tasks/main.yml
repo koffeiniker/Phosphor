@@ -22,7 +22,7 @@
 - name: Install Oracle Virtualbox
   apt:
     name:
-    - virtualbox-7.0
+    - virtualbox-6.1
     state: latest
   become: true
   tags:

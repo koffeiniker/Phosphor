@@ -1,0 +1,10 @@
+---
+
+- name: Install hashicorp tools ... vagrant, packer
+  apt:
+    name:
+      - vagrant
+      - packer
+  become: true
+  tags:
+    - hc
