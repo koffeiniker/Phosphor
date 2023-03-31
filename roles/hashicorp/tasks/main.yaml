@@ -1,5 +1,26 @@
 ---
 
+- name: Install Hashicorp repository key
+  ansible.builtin.get_url:
+    url: "https://apt.releases.hashicorp.com/gpg"
+    dest: /usr/share/keyrings/hashicorp-archive-keyring.asc
+    mode: "0644"
+    force: true
+  become: true
+  tags:
+    - hc
+    - key
+
+- name: Add the repo for Hashicorp
+  ansible.builtin.apt_repository:
+    filename: hashicorp-repo
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/hashicorp-archive-keyring.asc] https://apt.releases.hashicorp.com jammy main"
+      # repo: "deb [arch=amd64] https://apt.releases.hashicorp.com jammy main"
+    state: present
+  become: true
+  tags:
+    - hc
+
 - name: Install hashicorp tools ... vagrant, packer
   apt:
     name:
