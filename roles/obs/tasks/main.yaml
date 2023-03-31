@@ -1,15 +1,28 @@
 ---
 
-- name: Register the OBS repository
+- name: Install ffmpeg
+  apt:
+    name:
+      - ffmpeg
+  become: true
+
+- name: Handly the OBS repository
   ansible.builtin.apt_repository:
     filename: obs-repo
     repo: "ppa:obsproject/obs-studio"
+    state: "{{ obs_from_snap | ternary('absent','present')}}"
   become: true
-
 
 - name: Install OBS Studio
   apt:
     name:
-      - ffmpeg
       - obs-studio
   become: true
+  when: ! obs_from_snap
+
+- name: Install OBS Studio from snap
+  snap:
+    name:
+      - obs-studio
+  become: true
+  when: obs_from_snap

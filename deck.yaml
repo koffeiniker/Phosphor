@@ -10,7 +10,8 @@
     - thunderbird
     - office
     - media
-    - obs
+    - role: obs
+      tags: obs
     - communication
     - virtualbox
     - hashicorp
