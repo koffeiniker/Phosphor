@@ -1,0 +1,12 @@
+---
+
+- name: VMware Workstation pre-reqs
+  apt:
+    name:
+      - x11-apps
+      - libxtst6
+      - libxinerama1
+      - libxi6
+      - build-essential
+      - gnome-icon-theme
+  become: true
