@@ -1,0 +1,11 @@
+- name: Handly the alacritty repository
+  ansible.builtin.apt_repository:
+    filename: alacritty-repo
+    repo: "ppa:aslatter/ppa"
+  become: true
+
+- name: Install Alacritty
+  apt:
+    name:
+      - alacritty
+  become: true

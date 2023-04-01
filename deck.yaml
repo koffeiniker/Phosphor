@@ -17,6 +17,8 @@
     - hashicorp
     - role: vmware-workstation
       tags: vmw
+    - role: alacritty
+      tags: term
 
   tasks:
 
