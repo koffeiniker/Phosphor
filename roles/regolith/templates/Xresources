@@ -9,4 +9,4 @@ regolith.lockscreen.wallpaper.options: zoom
 gnome.terminal.use-transparent-background: true
 gnome.terminal.background-transparency-percent: 10
 
-
+gnome.terminal.font: {{ terminal_font }}

@@ -1,2 +1,5 @@
 wallpaper: sunset-4.png
 lockscreen: sunset-1.png
+
+# terminal_font: "JetBrains Mono 14"
+terminal_font: "Source Code Pro Regular 16"

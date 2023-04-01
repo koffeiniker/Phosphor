@@ -22,6 +22,18 @@
     - regolith-compositor-picom-glx
   become: true
 
+- name: Install any possibly required fonts
+  apt:
+    name:
+      - fonts-jetbrains-mono
+      - fonts-source-code-pro-ttf
+      - fonts-nerd-font-hack
+      - fonts-nerd-font-ibmplexmono
+  become: true
+  tags:
+    - xregs
+    - fonts
+
 - name: Copy the Xresources
   template:
     src: Xresources
