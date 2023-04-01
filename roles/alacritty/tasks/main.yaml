@@ -9,3 +9,16 @@
     name:
       - alacritty
   become: true
+
+- name: Configuration directory for Alacritty
+  file:
+    path: ~/.config/alacritty
+    state: directory
+    mode: '0755'
+
+- name: Alacritty's configuration
+  template:
+    src: alacritty.yml
+    dest: ~/.config/alacritty/alacritty.yml
+    mode: '0644'
+    

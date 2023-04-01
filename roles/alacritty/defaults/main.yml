@@ -1,0 +1,6 @@
+---
+
+alacritty:
+  opacity: 0.8
+  fontsize: 14.0
+  cursor: Underline

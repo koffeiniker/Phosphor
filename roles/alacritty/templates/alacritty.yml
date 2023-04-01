@@ -1,0 +1,36 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+window:
+
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: {{ alacritty.opacity }}
+
+  decorations_theme_variant: None
+
+# Font configuration
+font:
+  normal:
+    family: monospace
+    style: Regular
+
+  bold:
+    style: Bold
+
+  italic:
+    style: Italic
+
+  bold_italic:
+    style: Bold Italic
+
+  # Point size
+  size: {{ alacritty.fontsize }}
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: false
+
+cursor:
+  # Cursor style
+  style:
+    shape: {{ alacritty.cursor }}
+    blinking: Off
+
