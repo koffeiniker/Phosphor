@@ -3,3 +3,7 @@ lockscreen: sunset-1.png
 
 # terminal_font: "JetBrains Mono 14"
 terminal_font: "Source Code Pro Regular 16"
+
+status_bar: 
+  position: top
+  time_format: "%d.%m %H:%M:%S"

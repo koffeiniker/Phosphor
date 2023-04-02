@@ -1,5 +1,8 @@
 i3-wm.binding.exit_app: q
 
+i3-wm.bar.position: {{ status_bar.position }}
+i3xrocks.date.format2: {{ status_bar.time_format }}
+
 regolith.wallpaper.file: /home/prefect/.Xbackgrounds/{{ wallpaper }}
 regolith.wallpaper.options: zoom
 
