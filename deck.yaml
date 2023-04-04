@@ -37,6 +37,9 @@
         line: "alias play=ansible-playbook"
         create: yes
       
-
+    - name: Install a selection of snap-apps
+      snap:
+        name:
+          - openscad
       
       
