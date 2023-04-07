@@ -6,23 +6,28 @@
       - ffmpeg
   become: true
 
-- name: Handly the OBS repository
+- name: How do we install OBS?
+  debug:
+    msg: "{{ obs_from_snap | ternary('as snap','via apt')}}"
+
+- name: "Assure the OBS repository is {{ obs_from_snap | ternary('absent','present')}}"
   ansible.builtin.apt_repository:
     filename: obs-repo
     repo: "ppa:obsproject/obs-studio"
     state: "{{ obs_from_snap | ternary('absent','present')}}"
   become: true
 
-- name: Install OBS Studio
+- name: "Assure the OBS package is {{ obs_from_snap | ternary('absent','present')}}"
   apt:
     name:
       - obs-studio
+    state: "{{ obs_from_snap | ternary('absent','present')}}"
   become: true
-  when: ! obs_from_snap
 
-- name: Install OBS Studio from snap
+- name: "Assure the OBS Studio snap to be {{ obs_from_snap | ternary('present','absent')}}"
   snap:
     name:
       - obs-studio
+    state: "{{ obs_from_snap | ternary('present','absent')}}"
   become: true
-  when: obs_from_snap
+
