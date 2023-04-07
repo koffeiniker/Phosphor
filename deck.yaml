@@ -42,4 +42,6 @@
         name:
           - openscad
       become: true      
+      tags:
+        - snaps
       
