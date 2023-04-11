@@ -19,6 +19,8 @@
       tags: vmw
     - role: alacritty
       tags: term
+    - role: nvidia
+      tags: nvidia
 
   tasks:
 

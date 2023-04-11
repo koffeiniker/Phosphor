@@ -1,0 +1,8 @@
+---
+
+- name: Install Nvidia Drivers
+  apt:
+    name:
+      - nvidia-driver-525
+      - nvidia-dkms-525
+  become: true

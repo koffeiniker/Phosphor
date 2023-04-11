@@ -136,3 +136,7 @@ One day, playbooks like this might be part of a distro's install?! Then all you 
 ## About dconf and such
 
 I try to avoid dconf. Simply because I did not find a good way to handle such configuration. If someone could point me to an intro how to handle this with Ansible or alike tool, I might become a fan of it.
+
+# To Do
+
+- make the Nvidia drivers configurabe in deck.yaml
