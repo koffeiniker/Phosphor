@@ -1,8 +1,10 @@
 ---
 
-- name: Install Nvidia Drivers
+- name: "Install Nvidia Drivers ({{ nvidia.install | ternary('enabled','disabled') }})"
   apt:
     name:
-      - nvidia-driver-525
-      - nvidia-dkms-525
+      - "nvidia-driver-{{ nvidia.version }}"
+      - "nvidia-dkms-{{ nvidia.version }}"
+    state:  "{{ nvidia.install | ternary('present', 'absent') }}"
   become: true
+  tags: nvidia

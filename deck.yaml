@@ -3,6 +3,11 @@
 - name: ProDeck
   hosts: all
 
+  vars:
+    nvidia:
+      install: false
+      version: 525
+
   roles:
     - regolith
     - googlechrome
@@ -20,7 +25,6 @@
     - role: alacritty
       tags: term
     - role: nvidia
-      tags: nvidia
 
   tasks:
 
