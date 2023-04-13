@@ -18,14 +18,27 @@
     - media
   notify: autoremove
 
-- name: Openshot Editor
+- name: Openshot Video Editor
   apt:
     name: 
       - openshot-qt
       - openshot-qt-doc
-    state: "{{ media.shotcut | default(false) | ternary ('present', 'absent') }}"
+    state: "{{ media.openshot | default(false) | ternary ('present', 'absent') }}"
   become: true
   tags:
     - openshot
     - media
   notify: autoremove
+
+- name: Flowblade Video Editor
+  apt:
+    name: 
+      - flowblade
+    state: "{{ media.flowblade | default(false) | ternary ('present', 'absent') }}"
+  become: true
+  tags:
+    - flowblade
+    - media
+  notify: autoremove
+
+
