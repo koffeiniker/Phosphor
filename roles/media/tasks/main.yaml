@@ -41,4 +41,11 @@
     - media
   notify: autoremove
 
-
+- name: Audacity
+  apt:
+    name:
+      - audacity
+  become: true
+  tags: 
+    - audacity
+    - audio
