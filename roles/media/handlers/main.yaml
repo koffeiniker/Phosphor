@@ -1,0 +1,6 @@
+---
+
+- name: autoremove
+  apt:
+    autoremove: true
+  become: true

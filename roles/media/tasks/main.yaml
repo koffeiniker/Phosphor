@@ -4,3 +4,28 @@
   apt:
     name: vlc
   become: true
+  tags:
+    - vlc
+    - media
+
+- name: Shotcut Video Editor
+  apt:
+    name: shotcut
+    state: "{{ media.shotcut | default(false) | ternary ('present', 'absent') }}"
+  become: true
+  tags:
+    - shotcut
+    - media
+  notify: autoremove
+
+- name: Openshot Editor
+  apt:
+    name: 
+      - openshot-qt
+      - openshot-qt-doc
+    state: "{{ media.shotcut | default(false) | ternary ('present', 'absent') }}"
+  become: true
+  tags:
+    - openshot
+    - media
+  notify: autoremove
