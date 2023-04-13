@@ -1,0 +1,34 @@
+---
+
+# Let us have a GUI player
+#
+- name: Rhythmbox
+  apt:
+    name: rhythmbox
+  become: true
+  tags:
+    - player
+
+# And then let us have a CLI player
+#
+- name: Mplayer
+  apt:
+    name: mplayer
+  become: true
+  tags:
+    - radio
+    - player
+
+# Finally let us register a station
+#
+- name: Some radio-stations
+  lineinfile:
+    dest: ~/.bash_aliases
+    mode: "0664"
+    create: true
+    regexp: "^alias {{ item.cmd }}="
+    line: "alias {{ item.cmd }}='mplayer {{ item.url }}'"
+  loop: "{{ radios }}"
+  tags:
+    - radio
+

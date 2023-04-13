@@ -1,0 +1,13 @@
+---
+
+# Right, guys! This is German Radio and esp. those stations that I like to hear.
+# You might want to override this default in your playbook.
+#   Best regards, Adrian
+#
+radios:
+  - name: Radio Bob
+    cmd: bob
+    url: http://streams.radiobob.de/live-nrw-mitte/mp3-192/mediaplayer
+  - name: WDR 2
+    cmd: wdr2
+    url: https://wdr-wdr2-rheinruhr.icecastssl.wdr.de/wdr/wdr2/rheinruhr/mp3/128/stream.mp3

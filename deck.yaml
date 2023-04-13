@@ -25,6 +25,7 @@
     - role: alacritty
       tags: term
     - role: nvidia
+    - music
 
   tasks:
 
