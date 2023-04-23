@@ -13,3 +13,5 @@ TODO
 ====
 
 I still need to add some arguments and proposals for backup to the deck.
+
+I should install borgmatic via pip to have a newer version.
