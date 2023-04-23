@@ -1,0 +1,9 @@
+---
+
+- name: Borg and relates packages
+  apt:
+    name:
+      - borgbackup
+      - borgbackup-doc
+      - borgmatic
+  become: true

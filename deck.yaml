@@ -26,6 +26,7 @@
       tags: term
     - role: nvidia
     - music
+    - borg
 
   tasks:
 
