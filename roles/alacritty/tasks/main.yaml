@@ -16,6 +16,16 @@
     state: directory
     mode: '0755'
 
+# https://github.com/eendroroy/alacritty-theme
+# 
+# There are examples on the website
+#
+- name: Download alacritty-themes
+  git:
+    repo: https://github.com/eendroroy/alacritty-theme.git
+    dest: ~/.config/alacritty-colorscheme
+  tags: scheme
+
 - name: Alacritty's configuration
   template:
     src: alacritty.yml

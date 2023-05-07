@@ -1,5 +1,8 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
+import:
+  - ~/.config/alacritty-colorscheme/themes/{{ alacritty.theme }}.yaml
+
 window:
 
   # The value `0.0` is completely transparent and `1.0` is opaque.
