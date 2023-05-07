@@ -34,6 +34,28 @@
     - xregs
     - fonts
 
+- name: Install flameshot (maybe later integrated in regolith)
+  apt:
+    name:
+      flameshot
+  become: true
+  tags: flameshot
+
+- name: Assure the local i3 config partials directory
+  file:
+    path: ~/.config/regolith2/i3/config.d
+    state: directory
+    mode: "0755"
+  tags: flameshot
+
+# A copy would likely do it, but I expect configurables to end up here.
+- name: Deploy some keybindings for i3
+  template:
+    src: flameshot-keys.i3
+    dest: ~/.config/regolith2/i3/config.d
+    mode: "0644"
+  tags: flameshot
+
 - name: Copy the Xresources
   template:
     src: Xresources
