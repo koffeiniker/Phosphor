@@ -5,6 +5,12 @@
     name: hugo
   become: true
 
+# TODO: use pip to install
+# TODO: add mkdocs-material
+#
+# For now I will stick with the apt-version of mkdocs.
+# Later I might switch to the pip-version, also offering mkdocs-material-theme.
+#
 - name: mkdocs
   apt:
     name:
