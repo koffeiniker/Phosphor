@@ -1,3 +1,7 @@
+TODO: system-stats reviewen, gibt es mehr?
+TODO: remote reviewen, andere apps? Rustdesk?
+TODO: vpns prüfen: wireguard, openvpn
+
 # Phosphor
 
 In the old days, screens were illuminated by electron-beams hitting a phosphoric layer.
