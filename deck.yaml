@@ -43,11 +43,12 @@
           - vim
       become: true
 
-    - name: some tools -> 7z, nmap
+    - name: some tools -> 7z, nmap, net-tools (netstat)
       apt:
         name:
           - p7zip
           - nmap
+          - net-tools
       become: true
       tags: tools
 
