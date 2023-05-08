@@ -29,6 +29,8 @@
     - music
     - role: ssg
       tags: ssg
+    - role: system-stats
+      tags: stats
     - borg
 
   tasks:
@@ -40,6 +42,14 @@
           - screen
           - vim
       become: true
+
+    - name: some tools -> 7z, nmap
+      apt:
+        name:
+          - p7zip
+          - nmap
+      become: true
+      tags: tools
 
     - name: add some python
       apt:

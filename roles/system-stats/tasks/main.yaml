@@ -1,0 +1,19 @@
+
+    - name: some monitoring and networking
+      apt:
+        name:
+          - net-tools
+          - glances
+          - glances-doc
+          - saidar
+      become: true
+      tags: stats
+
+    - name: ntopng needs manual config or risk a security issue!
+      apt:
+        name:
+          - ntopng
+          - ntopng-doc
+      become: true
+      tags: stats
+      when: ntopng_enabled
