@@ -1,0 +1,15 @@
+---
+
+- name: Vinagre
+  apt:
+    name:
+      - vinagre
+  become: true
+
+- name: Remmina
+  apt:
+    name:
+      - remmina
+      - remmina-plugin-vnc
+      - remmina-plugin-rdp
+  become: true

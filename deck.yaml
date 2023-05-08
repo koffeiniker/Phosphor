@@ -31,6 +31,8 @@
       tags: ssg
     - role: system-stats
       tags: stats
+    - role: remote
+      tags: rem
     - borg
 
   tasks:
