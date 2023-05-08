@@ -1,5 +1,7 @@
-TODO: system-stats reviewen, gibt es mehr?
-TODO: remote reviewen, andere apps? Rustdesk?
+TODO
+====
+  - system-stats reviewen, gibt es mehr?
+  - remote reviewen, andere apps? Rustdesk?
 TODO: vpns prüfen: wireguard, openvpn
 
 # Phosphor
