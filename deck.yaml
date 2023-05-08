@@ -27,6 +27,8 @@
       tags: term
     - role: nvidia
     - music
+    - role: ssg
+      tags: ssg
     - borg
 
   tasks:

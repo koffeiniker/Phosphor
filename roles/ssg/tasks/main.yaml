@@ -1,0 +1,15 @@
+---
+
+- name: Hugo
+  apt:
+    name: hugo
+  become: true
+
+- name: mkdocs
+  apt:
+    name:
+      - mkdocs
+      - mkdocs-doc
+      - mkdocs-bootstrap
+      - mkdocs-nature
+  become: true
