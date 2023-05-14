@@ -4,7 +4,7 @@ TODO
   - remote reviewen, andere apps? Rustdesk?
   - docker brushup
   - lazydocker
-TODO: vpns prüfen: wireguard, openvpn
+  - vpns prüfen: wireguard, openvpn
 
 # Phosphor
 
