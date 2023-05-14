@@ -2,6 +2,8 @@ TODO
 ====
   - system-stats reviewen, gibt es mehr?
   - remote reviewen, andere apps? Rustdesk?
+  - docker brushup
+  - lazydocker
 TODO: vpns prüfen: wireguard, openvpn
 
 # Phosphor
