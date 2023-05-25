@@ -1,0 +1,27 @@
+---
+
+- name: docker from the system-repos
+  apt:
+    name:
+      - docker
+      - docker.io
+  become: true
+
+- name: add the user to the docker group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+  become: true
+
+
+# Finally let us register a station
+#
+- name: Lazydocker as docker-container
+  lineinfile:
+    dest: ~/.bash_aliases
+    mode: "0664"
+    create: true
+    regexp: "^alias lzd="
+    line: "alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lzd:/.config/jesseduffield/lazydocker lazyteam/lazydocker'"
+  tags:
+    - lzd
