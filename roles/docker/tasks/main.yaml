@@ -1,11 +1,32 @@
 ---
 
-- name: docker from the system-repos
+- name: Add apt signing key for Docker
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  become: true
+
+- name: Add the docker repo
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu jammy stable
+    state: present
+  become: true
+  tags:
+    - repo
+
+- name: Install docker-ce and docker-compose
   apt:
     name:
-      - docker
-      - docker.io
+      - docker-ce
+      - docker-compose
+      - docker-compose-plugin
+    state: latest
+    update_cache: true
   become: true
+
+- name: Install Docker Module for Python
+  pip:
+    name: docker
 
 - name: add the user to the docker group
   user:
