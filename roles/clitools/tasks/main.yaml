@@ -1,0 +1,30 @@
+---
+
+- name: Utilities ... mc, screen, vim, htop, tmux, ncdu
+  apt:
+    name: 
+      - mc
+      - ranger
+      - screen
+      - vim
+      - htop
+      - tmux
+      - ncdu
+  become: true
+
+- name: Some cosmetic toys
+  apt:
+    name:
+      - cmatrix
+      - neofetch
+  become: true
+
+- name: some tools -> 7z, nmap, net-tools (netstat)
+  apt:
+    name:
+      - p7zip
+      - nmap
+      - net-tools
+  become: true
+  tags: tools
+

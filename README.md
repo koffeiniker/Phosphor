@@ -2,9 +2,11 @@ TODO
 ====
   - system-stats reviewen, gibt es mehr?
   - remote reviewen, andere apps? Rustdesk?
-  - docker brushup
-  - lazydocker
   - vpns prüfen: wireguard, openvpn
+  - steam as an option
+  - speedread (speed-reader, ganz net)
+  - hollywood (jede menge interessant aussehender Müll auf dem Screen)
+
 
 # Phosphor
 

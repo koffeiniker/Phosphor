@@ -16,6 +16,7 @@
     - thunderbird
     - office
     - media
+    - clitools
     - role: obs
       tags: obs
     - communication
@@ -38,23 +39,6 @@
       tags: docker
 
   tasks:
-
-    - name: mc, screen, vim
-      apt:
-        name: 
-          - mc
-          - screen
-          - vim
-      become: true
-
-    - name: some tools -> 7z, nmap, net-tools (netstat)
-      apt:
-        name:
-          - p7zip
-          - nmap
-          - net-tools
-      become: true
-      tags: tools
 
     - name: add some python
       apt:
