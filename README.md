@@ -7,7 +7,6 @@ TODO
   - speedread (speed-reader, ganz net)
   - hollywood (jede menge interessant aussehender Müll auf dem Screen)
 
-
 # Phosphor
 
 In the old days, screens were illuminated by electron-beams hitting a phosphoric layer.
