@@ -6,7 +6,7 @@
 
   vars:
     nvidia:
-      install: false
+      install: true
       version: 525
 
   roles:
