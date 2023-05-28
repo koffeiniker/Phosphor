@@ -16,6 +16,7 @@
   apt:
     name:
       - cmatrix
+      - hollywood
       - neofetch
   become: true
 

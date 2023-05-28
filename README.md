@@ -3,7 +3,6 @@ TODO
   - system-stats reviewen, gibt es mehr?
   - remote reviewen, andere apps? Rustdesk?
   - vpns prüfen: wireguard, openvpn
-  - steam as an option
   - speedread (speed-reader, ganz net)
   - hollywood (jede menge interessant aussehender Müll auf dem Screen)
 
