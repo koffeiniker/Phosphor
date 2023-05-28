@@ -9,6 +9,10 @@
       install: true
       version: 525
 
+    # Attention: if you do not perfectly know what you are doing, the steam-client poses massive security risks!
+    # 
+    enable_steam: true
+
   roles:
     - regolith
     - googlechrome
@@ -38,6 +42,8 @@
     - borg
     - role: docker
       tags: docker
+    - role: steam
+      tags: steam
 
   tasks:
 

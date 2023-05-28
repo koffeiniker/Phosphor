@@ -1,0 +1,12 @@
+---
+
+- name: "Steam is {{ enable_steam | ternary('enabled', 'disabled') }}"
+  snap:
+    name: steam
+    state: "{{ enable_steam | ternary('present', 'absent') }}"
+  become: true
+
+- name: "Note!"
+  debug:
+    msg: "Steam is a security risk!"
+  when: enable_steam
