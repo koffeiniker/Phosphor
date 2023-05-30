@@ -1,15 +1,41 @@
 ---
 
-- name: Utilities ... mc, screen, vim, htop, tmux, ncdu
+- name: My basics
+  apt:
+    name:
+      - vim
+      - screen
+  become: true
+
+- name: Utilities ... ranger, htop, tmux, ncdu, thef*ck
   apt:
     name: 
-      - mc
       - ranger
-      - screen
-      - vim
       - htop
       - tmux
       - ncdu
+      - thefuck
+  become: true
+
+# Proposed by Tech Craft on youtube: https://www.youtube.com/watch?v=2OHrTQVlRMg
+#
+- name: Utilities ... mc, exa, fzf, ripgrep, zoxide, bat, entr
+  apt:
+    name: 
+      - mc
+      - exa
+      - fzf
+      - ripgrep
+      - zoxide
+      - bat
+      - entr
+  become: true
+
+
+- name: Utilities for JSON processing
+  apt:
+    name: 
+      - jq
   become: true
 
 - name: Some cosmetic toys
