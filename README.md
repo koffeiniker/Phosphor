@@ -8,6 +8,8 @@ TODO
   - add ffmpeg to some media role
   - add (image)magick
   - cpufetch
+  - cmus - curses audio player
+  - speedtest -- ookla speed test on console
 
 # Phosphor
 
