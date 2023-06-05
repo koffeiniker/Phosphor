@@ -44,6 +44,7 @@
       - cmatrix
       - hollywood
       - neofetch
+      - cpufetch
   become: true
 
 - name: some tools -> 7z, nmap, net-tools (netstat)
