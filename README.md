@@ -5,6 +5,9 @@ TODO
   - vpns prüfen: wireguard, openvpn
   - speedread (speed-reader, ganz net)
   - hollywood (jede menge interessant aussehender Müll auf dem Screen)
+  - add ffmpeg to some media role
+  - add (image)magick
+  - cpufetch
 
 # Phosphor
 
