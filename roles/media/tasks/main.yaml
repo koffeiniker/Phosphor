@@ -1,11 +1,14 @@
 ---
 
-- name: VLC
+- name: VLC & ffmpeg
   apt:
-    name: vlc
+    name: 
+      - vlc
+      - ffmpeg
   become: true
   tags:
     - vlc
+    - ffmpeg
     - media
 
 - name: Shotcut Video Editor
