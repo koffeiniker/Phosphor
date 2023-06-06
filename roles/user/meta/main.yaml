@@ -1,5 +1,15 @@
 ---
 
+# I added the dependencies as the clitools are
+# interwoven with the fish-configuration and its
+# functions.
+#
+# Docker needs to be installed before I can add
+# the user to the role. I might have chosen to
+# add the user to the docker group within the
+# docker role, but it appeared more logical,
+# this way.
+
 dependencies:
   - role: docker
   - role: clitools
