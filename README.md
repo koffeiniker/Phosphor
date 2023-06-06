@@ -4,7 +4,6 @@ TODO
   - remote reviewen, andere apps? Rustdesk?
   - vpns prüfen: wireguard, openvpn
   - speedread (speed-reader, ganz net)
-  - hollywood (jede menge interessant aussehender Müll auf dem Screen)
   - add (image)magick
   - cpufetch
   - cmus - curses audio player
