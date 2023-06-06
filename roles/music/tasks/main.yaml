@@ -9,11 +9,13 @@
   tags:
     - player
 
-# And then let us have a CLI player
+# And then let us have some CLI players
 #
 - name: Mplayer
   apt:
-    name: mplayer
+    name: 
+      - mplayer
+      - cmus
   become: true
   tags:
     - radio

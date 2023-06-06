@@ -5,8 +5,6 @@ TODO
   - vpns prüfen: wireguard, openvpn
   - speedread (speed-reader, ganz net)
   - add (image)magick
-  - cpufetch
-  - cmus - curses audio player
   - speedtest -- ookla speed test on console
 
 # Phosphor
