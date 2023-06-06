@@ -10,10 +10,12 @@
 # you got my respect, maybe later I will prepare a separate
 # role for you.
 #
-- name: You´ll need to have this fishi ... ! (Douglas Adams)
+- name: You´ll need to have this fish ... ! (Douglas Adams)
   apt:
     name: fish
   become: true
+
+
 
 # The "append" makes sure that the user isn't accidentially
 # kicked out of the sudo group, e.g.
@@ -38,8 +40,12 @@
     path: ~/.config/fish/functions
     state: directory
     mode: "0755"
+  tags: alias
 
 # Copy some functions there ...
+#
+# These are mainly aliases or support for
+# some cli tools.
 #
 - name: fish-functions
   copy:
