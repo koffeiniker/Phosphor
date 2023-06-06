@@ -28,12 +28,6 @@
   pip:
     name: docker
 
-- name: add the user to the docker group
-  user:
-    name: "{{ ansible_user_id }}"
-    groups: docker
-  become: true
-
 
 # Finally let us register a station
 #

@@ -1,0 +1,53 @@
+---
+
+# At first let us have a look at the interactive shell.
+# Interactively, fish is far superior in handling to bash.
+# Ok this would not make me write a single shell-script in
+# fish's flavour of shell-script, but as the terminal-shell
+# it is clearly the better choice.
+#
+# For those who follow Apple in preferring the zsh:
+# you got my respect, maybe later I will prepare a separate
+# role for you.
+#
+- name: You´ll need to have this fishi ... ! (Douglas Adams)
+  apt:
+    name: fish
+  become: true
+
+# The "append" makes sure that the user isn't accidentially
+# kicked out of the sudo group, e.g.
+# Ansible would do that even as there is no group definition
+# in this task.
+#
+- name: The user´s default-shell is fish
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/bin/fish
+    groups:
+      - docker
+      - sudo
+    append: true
+  become: true
+
+# Some aliases will be implemented as fish-functions
+# Assure the directory is ready for it:
+#
+- name: Directory for fish-functions
+  file:
+    path: ~/.config/fish/functions
+    state: directory
+    mode: "0755"
+
+# Copy some functions there ...
+#
+- name: fish-functions
+  copy:
+    src: "{{ item }}.fish"
+    dest: ~/.config/fish/functions
+    mode: "0755"
+  loop:
+    - f
+    - play
+    - radio
+  tags: alias

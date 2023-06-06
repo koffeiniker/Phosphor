@@ -20,7 +20,6 @@
     - thunderbird
     - office
     - media
-    - clitools
     - emacs
     - role: obs
       tags: obs
@@ -40,11 +39,10 @@
     - role: remote
       tags: rem
     - borg
-    - role: docker
-      tags: docker
     - role: steam
       tags: steam
-
+    - user
+    
   tasks:
 
     - name: add some python
