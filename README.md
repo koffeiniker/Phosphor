@@ -3,8 +3,6 @@ TODO
   - system-stats reviewen, gibt es mehr?
   - remote reviewen, andere apps? Rustdesk?
   - vpns prüfen: wireguard, openvpn
-  - speedread (speed-reader, ganz net)
-  - add (image)magick
 
 # Phosphor
 
