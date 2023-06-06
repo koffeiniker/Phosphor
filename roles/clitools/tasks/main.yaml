@@ -59,3 +59,9 @@
   become: true
   tags: tools
 
+- name: Internet speedtest
+  apt:
+    name:
+      - speedtest-cli
+  become: true
+  tags: internet
