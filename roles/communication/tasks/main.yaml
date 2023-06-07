@@ -1,10 +1,9 @@
-- name: Slack (as snap)
+- name: Snaps ... slack, whatsapp, discord
   snap:
-    name: slack
+    name:
+      - slack
+      - discord
+      - whatsapp-for-linux
   become: true
 
-- name: Discord (as snap)
-  snap:
-    name: discord
-  become: true
 
