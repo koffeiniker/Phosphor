@@ -1,9 +1,26 @@
-- name: Snaps ... slack, whatsapp, discord
+# We do not necessarily need all of them, but:
+#
+# slack    - I use this to communicate with a friend ;-), regrettably slack's
+#            free plan allows only 40 mins per day of screen sharing.
+#            So it is not overly useful to me, from a general perspective.
+# whatsapp - I use this to talk to and chat with ... whoever
+# discord  - commonly used and remember ... midjourney uses it
+# zoom     - Has 40mins of screen sharing per meeting, which is already
+#            pretty useful, even from a general perspective ;-).
+#
+# I assume this to be a good starter-pack. Keep in mind: the choice of
+# communication isn't really subject to anyone's own preference. It is 
+# a question of who you are communicating with. It is an agreement that
+# I simply cannot commonly anticipate. So at this point, Phosphor is 
+# most likely to be extended by you!
+#
+- name: Snaps ... slack, whatsapp, discord, zoom
   snap:
     name:
       - slack
       - discord
       - whatsapp-for-linux
+      - zoom-client
   become: true
 
 
