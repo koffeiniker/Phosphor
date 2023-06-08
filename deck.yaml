@@ -9,8 +9,15 @@
       install: true
       version: 525
 
-    # Attention: if you do not perfectly know what you are doing, the steam-client poses massive security risks!
-    # 
+    # Attention: if you do not perfectly know what you are doing, 
+    # the steam-client poses massive security risks!
+    # If remote access is enabled in steam, it allows
+    # complete remote access and not just accessing
+    # games. You have been warned!
+    #
+    # Proper default for a work-environment would
+    # be false!
+    #
     enable_steam: true
 
   roles:
@@ -42,7 +49,7 @@
     - role: steam
       tags: steam
     - user
-    
+
   tasks:
 
     - name: add some python
@@ -53,13 +60,6 @@
       tags:
         - python
 
-    - name: adding alias to bashrc
-      lineinfile:
-        path: ~/.bash_aliases
-        regex: "alias play="
-        line: "alias play=ansible-playbook"
-        create: yes
-      
     - name: Install a selection of snap-apps
       snap:
         name:
