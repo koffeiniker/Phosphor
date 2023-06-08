@@ -57,3 +57,12 @@
     - play
     - radio
   tags: alias
+
+# Initialize zoxide for fish
+- name: init-code for zoxide
+  lineinfile:
+    path: ~/.config/fish/config.fish
+    regex: "^ *zoxide"
+    line: "    zoxide init fish | source"
+    insertafter: "^if status is-interactive"
+  tags: zoxide
