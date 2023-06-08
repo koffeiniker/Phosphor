@@ -20,17 +20,3 @@
   tags:
     - radio
     - player
-
-# Finally let us register a station
-#
-- name: Some radio-stations
-  lineinfile:
-    dest: ~/.bash_aliases
-    mode: "0664"
-    create: true
-    regexp: "^alias {{ item.cmd }}="
-    line: "alias {{ item.cmd }}='mplayer {{ item.url }}'"
-  loop: "{{ radios }}"
-  tags:
-    - radio
-

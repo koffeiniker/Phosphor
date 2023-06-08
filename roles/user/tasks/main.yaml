@@ -58,6 +58,13 @@
     - radio
   tags: alias
 
+- name: radio stations
+  template:
+    src: "radio.fish"
+    dest: ~/.config/fish/functions/radio.fish
+    mode: "0755"
+  tags: radio
+
 # Initialize zoxide for fish
 - name: init-code for zoxide
   lineinfile:

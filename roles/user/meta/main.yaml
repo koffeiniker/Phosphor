@@ -13,3 +13,4 @@
 dependencies:
   - role: docker
   - role: clitools
+  - role: music
