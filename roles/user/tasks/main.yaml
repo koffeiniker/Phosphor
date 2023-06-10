@@ -42,6 +42,16 @@
     mode: "0755"
   tags: alias
 
+# Before fish is running first time, there is no config.fish
+# Therefore instead of patching the config.fish file,
+# I copy my own ahead of running fish.
+#
+- name: Config file for fish
+  copy:
+    src: config.fish
+    dest: ~/.config/fish/config.fish
+    mode: "0644"
+
 # Copy some functions there ...
 #
 # These are mainly aliases or support for
@@ -63,12 +73,3 @@
     dest: ~/.config/fish/functions/radio.fish
     mode: "0755"
   tags: radio
-
-# Initialize zoxide for fish
-- name: init-code for zoxide
-  lineinfile:
-    path: ~/.config/fish/config.fish
-    regex: "^ *zoxide"
-    line: "    zoxide init fish | source"
-    insertafter: "^if status is-interactive"
-  tags: zoxide
