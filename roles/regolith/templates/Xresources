@@ -1,3 +1,5 @@
+i3-wm.bar.mode: hide
+
 i3-wm.binding.exit_app: q
 
 i3-wm.bar.position: {{ status_bar.position }}
