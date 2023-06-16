@@ -51,10 +51,13 @@
 # A copy would likely do it, but I expect configurables to end up here.
 - name: Deploy some keybindings for i3
   template:
-    src: flameshot-keys.i3
+    src: "{{ item }}"
     dest: ~/.config/regolith2/i3/config.d
     mode: "0644"
-  tags: flameshot
+  loop:
+    - flameshot-keys.i3
+    - workspace-kicker.i3
+  tags: keys
 
 - name: Copy the Xresources
   template:
