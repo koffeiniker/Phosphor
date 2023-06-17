@@ -18,6 +18,7 @@
       - tmux
       - ncdu
       - thefuck
+      - duf
   become: true
 
 # Proposed by Tech Craft on youtube: https://www.youtube.com/watch?v=2OHrTQVlRMg
