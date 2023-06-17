@@ -37,7 +37,7 @@
 #
 - name: Directory for fish-functions
   file:
-    path: ~/.config/fish/functions
+    path: "{{ fish_funcs }}"
     state: directory
     mode: "0755"
   tags: alias
@@ -50,7 +50,7 @@
 - name: fish-functions
   copy:
     src: "{{ item }}.fish"
-    dest: ~/.config/fish/functions
+    dest: "{{ fish_funcs }}"
     mode: "0755"
   loop:
     - f
@@ -60,7 +60,7 @@
 - name: radio stations
   template:
     src: "radio.fish"
-    dest: ~/.config/fish/functions/radio.fish
+    dest: "{{ fish_funcs }}"
     mode: "0755"
   tags: radio
 

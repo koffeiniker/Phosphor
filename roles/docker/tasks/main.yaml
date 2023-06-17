@@ -40,3 +40,11 @@
     line: "alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lzd:/.config/jesseduffield/lazydocker lazyteam/lazydocker'"
   tags:
     - lzd
+
+# Install some tools
+# 
+- name: Docker related tools
+  apt:
+    name:
+      - ctop
+  become: true

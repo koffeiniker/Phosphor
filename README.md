@@ -3,6 +3,8 @@ TODO
   - system-stats reviewen, gibt es mehr?
   - remote reviewen, andere apps? Rustdesk?
   - vpns prüfen: wireguard, openvpn
+  - prebuild-MPR? https://docs.makedeb.org/prebuilt-mpr/getting-started/#setting-up-the-repository
+  - foto-workflow: gimp, exiftool or alike, ...
 
 # Phosphor
 

@@ -17,8 +17,6 @@
       - htop
       - tmux
       - ncdu
-      - thefuck
-      - duf
   become: true
 
 # Proposed by Tech Craft on youtube: https://www.youtube.com/watch?v=2OHrTQVlRMg
@@ -35,11 +33,17 @@
       - entr
   become: true
 
-
-- name: Utilities for JSON processing
+# Proposed by dev.to: https://dev.to/lissy93/cli-tools-you-cant-live-without-57f6
+# 
+- name: Utilities ...
   apt:
-    name: 
+    name:
+      - thefuck
+      - duf
+      - aria2
+      - fdupes
       - jq
+      - most
   become: true
 
 - name: Some cosmetic toys
@@ -66,3 +70,10 @@
       - speedtest-cli
   become: true
   tags: internet
+
+- name: lazygit - as a snap (forgive me ;-), I'm lazy after all)
+  snap:
+    name: lazygit-gm
+  become: true
+  tags: lg
+

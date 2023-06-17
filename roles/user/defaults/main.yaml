@@ -11,3 +11,5 @@ radios:
   - name: WDR 2
     cmd: wdr2
     url: https://wdr-wdr2-rheinruhr.icecastssl.wdr.de/wdr/wdr2/rheinruhr/mp3/128/stream.mp3
+
+fish_funcs: ~/.config/fish/functions
