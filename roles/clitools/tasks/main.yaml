@@ -74,6 +74,7 @@
 - name: lazygit - as a snap (forgive me ;-), I'm lazy after all)
   snap:
     name: lazygit-gm
+    classic: true
   become: true
   tags: lg
 
