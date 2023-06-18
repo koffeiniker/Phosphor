@@ -92,7 +92,7 @@
     var: lazygit_version.stdout
   tags: lg
 
-- name: Create an unpack archive for lazygit
+- name: Create an unpack directory for lazygit
   file:
     path: /usr/local/share/lazygit
     state: directory
