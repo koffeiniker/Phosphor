@@ -1,0 +1,12 @@
+---
+
+- name: Install ssh daemon
+  apt:
+    name: openssh-server
+  become: true
+
+- name: Assure the ssh service is started
+  systemd:
+    name: ssh
+    state: started
+  become: true

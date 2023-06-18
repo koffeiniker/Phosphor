@@ -28,6 +28,8 @@
     - office
     - media
     - emacs
+    - role: ssh
+      tags: ssh
     - role: obs
       tags: obs
     - communication
