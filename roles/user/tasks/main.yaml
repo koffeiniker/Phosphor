@@ -55,6 +55,7 @@
   loop:
     - f
     - play
+    - lg
   tags: alias
 
 - name: radio stations
