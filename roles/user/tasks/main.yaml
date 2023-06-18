@@ -46,6 +46,11 @@
 #
 # These are mainly aliases or support for
 # some cli tools.
+# 
+# f    - thefuck
+# play - ansible-playbook
+# lg   - lazygit
+# r    - ranger
 #
 - name: fish-functions
   copy:
@@ -56,6 +61,7 @@
     - f
     - play
     - lg
+    - r
   tags: alias
 
 - name: radio stations
