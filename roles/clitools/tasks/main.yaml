@@ -8,6 +8,7 @@
     name:
       - vim
       - screen
+      - curl
   become: true
 
 - name: Utilities ... ranger, htop, tmux, ncdu, thef*ck
@@ -71,10 +72,53 @@
   become: true
   tags: internet
 
-- name: lazygit - as a snap (forgive me ;-), I'm lazy after all)
-  snap:
-    name: lazygit-gm
-    classic: true
+# I want lazygit in the team. Regrettably the author seems to have a
+# problem with Ubuntu. This thing is in every reputated repository system
+# but not in apt in any way (e.g. ppa). A previously maintained ppa
+# has been abandonned. Why? I got no clue. I have no choice but to
+# take the extra-mile: either I maintain the versions manually,
+# or I create a set of tasks replicating the documented installation
+# procedure.
+
+- name: lazygit - check for current version
+  shell: 
+    cmd: "curl -s 'https://api.github.com/repos/jesseduffield/lazygit/releases/latest' | grep -Po '.tag_name.: .v\\K[.0-9]*'"
+  register: lazygit_version
+  changed_when: false
+  tags: lg
+
+- name: "Current/latest version is ..."
+  debug:
+    var: lazygit_version.stdout
+  tags: lg
+
+- name: Create an unpack archive for lazygit
+  file:
+    path: /usr/local/share/lazygit
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+  become: true
+  tags: lg
+
+- name: Unpack the release-archive of lazygit
+  unarchive:
+    src: "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_{{ lazygit_version.stdout }}_Linux_x86_64.tar.gz"
+    remote_src: yes
+    dest: /usr/local/share/lazygit
+    owner: root
+    group: root
+  become: true
+  tags: lg
+
+- name: Install the binary of lazygit
+  copy:
+    src: /usr/local/share/lazygit/lazygit
+    dest: /usr/local/bin/lazygit
+    owner: root
+    group: root
+    mode: "0755"
   become: true
   tags: lg
 
