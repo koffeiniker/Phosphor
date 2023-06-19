@@ -5,6 +5,8 @@ TODO
   - vpns prüfen: wireguard, openvpn
   - prebuild-MPR? https://docs.makedeb.org/prebuilt-mpr/getting-started/#setting-up-the-repository
   - foto-workflow: gimp, exiftool or alike, ...
+  - tagged code to active and deactivate ssh. Fail2ban stays on, so it cannot be forgotten in
+    case someone activates ssh manually.
 
 # Phosphor
 
