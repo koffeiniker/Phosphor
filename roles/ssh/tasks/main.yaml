@@ -13,11 +13,11 @@
     - norootssh
     - ssh
 
-- name: "{{ (ssh_password_allowed == 'no') | ternary('Forbid', 'Allow') }} password authentication"
+- name: "{{ ssh_password_allowed | ternary('Allow', 'Forbid') }} password authentication"
   lineinfile:
     path: /etc/ssh/sshd_config
     regexp: '^PasswordAuthentication '
-    line: "PasswordAuthentication {{ ssh_password_allowed }}"
+    line: "PasswordAuthentication {{ ssh_password_allowed | ternary('yes', 'no') }}"
     insertafter: '^#PasswordAuthentication'
     state: present
   notify: Restart SSHD
