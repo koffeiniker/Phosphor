@@ -30,6 +30,8 @@
     - emacs
     - role: ssh
       tags: ssh
+    - role: fail2ban
+      tags: fail2ban
     - role: obs
       tags: obs
     - communication

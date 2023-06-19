@@ -1,0 +1,15 @@
+---
+
+- name: Install fail2ban
+  apt:
+    name: fail2ban
+    state: latest
+  become: true
+
+- name: Make sure the service is started and enabled
+  systemd:
+    name: fail2ban
+    state: started
+    enabled: true
+  become: true
+
