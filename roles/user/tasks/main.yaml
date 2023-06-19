@@ -29,6 +29,7 @@
     groups:
       - docker
       - sudo
+      - ssh-users
     append: true
   become: true
 

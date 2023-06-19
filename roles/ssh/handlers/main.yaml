@@ -1,0 +1,7 @@
+---
+
+- name: Restart SSHD
+  systemd:
+    name: ssh
+    state: reloaded
+  become: true

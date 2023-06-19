@@ -1,12 +1,62 @@
 ---
 
-- name: Install ssh daemon
-  apt:
-    name: openssh-server
+- name: Forbid root login on ssh
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PermitRootLogin '
+    line: 'PermitRootLogin no'
+    insertafter: '^#PermitRootLogin'
+    state: present
+  notify: Restart SSHD
   become: true
+  tags:
+    - norootssh
+    - ssh
 
-- name: Assure the ssh service is started
-  systemd:
-    name: ssh
-    state: started
+- name: "{{ (ssh_password_allowed == 'no') | ternary('Forbid', 'Allow') }} password authentication"
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PasswordAuthentication '
+    line: "PasswordAuthentication {{ ssh_password_allowed }}"
+    insertafter: '^#PasswordAuthentication'
+    state: present
+  notify: Restart SSHD
   become: true
+  tags:
+    - nopasswordssh
+    - ssh
+
+- name: We need to have a group ssh-users
+  group:
+    name: ssh-users
+    state: present
+  become: true
+  tags:
+    - ssh
+
+- name: Limit the use of ssh to members of group ssh-users
+  template:
+    src: group.template
+    dest: /etc/ssh/sshd_config.d/group.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  notify: Restart SSHD
+  tags:
+    - sshgroup
+    - ssh
+
+- name: Create the config directory for the main user
+  file:
+    state: directory
+    path: ~/.ssh/config.d
+
+- name: Add an include directive for that directory to ssh's config
+  lineinfile:
+    path: ~/.ssh/config
+    regexp: "^Include ~/.ssh/config.d/"
+    line: "Include ~/.ssh/config.d/*"
+    insertbefore: "BOF"
+    mode: "0644"
+    create: true

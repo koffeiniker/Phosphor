@@ -1,0 +1,11 @@
+---
+
+# If you allow this, better make sure you got
+# fail2ban installed and working.
+#
+# Remember ... the value below is text to be
+# used in a template. Only yes or no are allowed here.
+# And the quotes are mandatory!
+#
+ssh_password_allowed: "yes"
+
