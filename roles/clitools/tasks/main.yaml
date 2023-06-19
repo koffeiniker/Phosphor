@@ -9,6 +9,7 @@
       - vim
       - screen
       - curl
+      - p7zip-full
   become: true
 
 - name: Utilities ... ranger, htop, tmux, ncdu, thef*ck
