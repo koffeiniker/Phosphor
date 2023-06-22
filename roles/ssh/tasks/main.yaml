@@ -1,5 +1,12 @@
 ---
 
+- name: Install ssh
+  apt:
+    name: ssh
+  become: true
+  tags:
+    - ssh
+
 - name: Forbid root login on ssh
   lineinfile:
     path: /etc/ssh/sshd_config
