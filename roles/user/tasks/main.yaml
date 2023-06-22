@@ -63,6 +63,7 @@
     - play
     - lg
     - r
+    - fish_greeting
   tags: alias
 
 - name: radio stations
