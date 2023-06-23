@@ -1,0 +1,6 @@
+---
+
+- name: "A retro-terminal with CRT effects ... cool!"
+  apt:
+    name: cool-retro-term
+  become: true
