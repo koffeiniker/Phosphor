@@ -4,3 +4,18 @@
   apt:
     name: cool-retro-term
   become: true
+
+- name: Assure the local i3 config partials directory
+  file:
+    path: ~/.config/regolith2/i3/config.d
+    state: directory
+    mode: "0755"
+
+# A copy would likely do it, but I expect configurables to end up here.
+- name: Deploy some keybindings for i3
+  template:
+    src: "{{ item }}"
+    dest: ~/.config/regolith2/i3/config.d
+    mode: "0644"
+  loop:
+    - cool-retro-term.i3

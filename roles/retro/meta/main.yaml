@@ -1,0 +1,6 @@
+---
+
+# Regolith is the heart of Phospor, anyway.
+# We depend on it so we can configure the keybpard shortcut.
+dependencies:
+  - role: regolith
