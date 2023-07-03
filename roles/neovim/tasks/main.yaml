@@ -1,0 +1,49 @@
+---
+
+- name: Add the unstable PPA for neovim to get the latest. It is stable enough!
+  ansible.builtin.apt_repository:
+    repo: ppa:neovim-ppa/unstable
+  become: true
+  tags:
+    - nv
+
+# I make it KISS-style for a start ...
+# Later, I intend to switch to the ppa as this has more recent versions of neovim
+#
+- name: Install neovim from the apt repo
+  apt:
+    name: 
+      - neovim
+      - python3-neovim
+    state: latest
+  become: true
+  tags:
+    - nv
+
+- name: We need a config directory
+  file:
+    path: ~/.config/nvim
+    state: directory
+    mode: 0o700
+  tags:
+    - nv
+
+- name: Let's put the NvChad repo
+  git:
+    repo: https://github.com/NvChad/NvChad
+    dest: ~/.config/nvim
+    depth: 1
+    version: v2.0
+  tags:
+    - nv
+
+- name: Clear the NvChad directories
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - ~/.config/nvim
+    - ~/.local/share/nvim
+  tags:
+    - never
+    - resetnvchad

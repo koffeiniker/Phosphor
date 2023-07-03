@@ -1,0 +1,8 @@
+---
+
+- name: Node Package Manager
+  apt:
+    name:
+      - npm
+    state: latest
+  become: true
