@@ -66,6 +66,13 @@
   become: true
   tags: tools
 
+- name: Hemmi's tip ... btop
+  apt:
+    name:
+      - btop
+  become: true
+  tags: btop
+
 - name: Internet speedtest
   apt:
     name:
