@@ -43,7 +43,13 @@
     mode: "0755"
   tags: alias
 
-# Copy some functions there ...
+- name: Directory for fish-configs
+  file:
+    path: "{{ fish_confs }}"
+    state: directory
+    mode: "0755"
+
+      # Copy some functions there ...
 #
 # These are mainly aliases or support for
 # some cli tools.
@@ -75,9 +81,8 @@
 
 # Initialize zoxide for fish
 - name: init-code for zoxide
-  lineinfile:
-    path: ~/.config/fish/config.fish
-    regex: "^ *zoxide"
-    line: "    zoxide init fish | source"
-    insertafter: "^if status is-interactive"
+  template:
+    src: zoxide.fish
+    dest: ~/.config/fish/conf.d/zoxide.fish
+    mode: 0o644
   tags: zoxide

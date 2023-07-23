@@ -13,3 +13,5 @@ radios:
     url: https://wdr-wdr2-rheinruhr.icecastssl.wdr.de/wdr/wdr2/rheinruhr/mp3/128/stream.mp3
 
 fish_funcs: ~/.config/fish/functions
+fish_confs: ~/.config/fish/conf.d
+
