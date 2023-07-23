@@ -4,6 +4,7 @@
         name:
           - glances
           - glances-doc
+          - btop
       become: true
       tags: stats
 
