@@ -3,3 +3,4 @@
 - name: refresh regolith-look
   command:
     cmd: regolith-look refresh
+  failed_when: false
