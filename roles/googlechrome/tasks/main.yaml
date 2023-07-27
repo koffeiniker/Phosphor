@@ -8,14 +8,15 @@
     force: true
   become: true
   tags: key
+  when: deck.is.pc
 
 - name: Add the repo for Google
   ansible.builtin.apt_repository:
     filename: google-chrome
-    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/google-archive-keyring.asc] http://dl.google.com/linux/chrome/deb/ stable main"
-    # repo: "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main"
+    repo: "deb [arch={{ deck.arch }} signed-by=/usr/share/keyrings/google-archive-keyring.asc] http://dl.google.com/linux/chrome/deb/ stable main"
     state: present
   become: true
+  when: deck.is.pc
 
 - name: Install Google Chrome
   apt:
@@ -23,3 +24,12 @@
     - google-chrome-stable
     state: latest
   become: true
+  when: deck.is.pc
+
+- name: Install Chromium (all we have on an RPi)
+  apt:
+    name:
+    - chromium-browser
+    state: latest
+  become: true
+  when: deck.is.rpi
