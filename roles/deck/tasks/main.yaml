@@ -1,0 +1,16 @@
+---
+
+# Show the defaults
+#
+- debug:
+    var: ansible_architecture
+
+- debug:
+    var: deck
+
+# Check for supported architecture
+#
+- debug:
+    msg: "Architecture is {{ deck.arch }} / {{ ansible_architecture }}"
+  failed_when:
+    (ansible_architecture != 'x86_64') and (ansible_architecture != 'aarch64')

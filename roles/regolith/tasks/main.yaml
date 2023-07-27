@@ -11,7 +11,7 @@
 - name: Add the repo for regolith
   ansible.builtin.apt_repository:
     filename: regolith-repo
-    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.asc] https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main"
+    repo: "deb [arch={{ deck.arch }} signed-by=/usr/share/keyrings/regolith-archive-keyring.asc] https://regolith-desktop.org/release-ubuntu-jammy-{{ deck.arch }} jammy main"
     state: present
   become: true
 
