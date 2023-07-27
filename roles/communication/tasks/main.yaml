@@ -22,5 +22,6 @@
       - whatsapp-for-linux
       - zoom-client
   become: true
+  when: deck.is.pc
 
 

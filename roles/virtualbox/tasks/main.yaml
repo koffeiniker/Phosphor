@@ -9,15 +9,17 @@
   become: true
   tags:
     - vbox
+  when: deck.is.pc
 
 - name: Add the repo for Oracle Virtualbox
   ansible.builtin.apt_repository:
     filename: virtualbox
-    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/virtualbox-archive-keyring.asc] http://download.virtualbox.org/virtualbox/debian jammy contrib"
+    repo: "deb [arch={{ deck.arch }} signed-by=/usr/share/keyrings/virtualbox-archive-keyring.asc] http://download.virtualbox.org/virtualbox/debian jammy contrib"
     state: present
   become: true
   tags:
     - vbox
+  when: deck.is.pc
 
 - name: Install Oracle Virtualbox
   apt:
@@ -27,3 +29,4 @@
   become: true
   tags:
     - vbox
+  when: deck.is.pc
