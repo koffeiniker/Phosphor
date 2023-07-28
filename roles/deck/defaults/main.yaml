@@ -3,10 +3,20 @@
 # This role defines some settings to be used as defaults.
 #
 deck:
+
   arch: "{{ (ansible_architecture == 'aarch64') | ternary('arm64', 'amd64')}}"
+
   is:
     rpi: "{{ (ansible_architecture == 'aarch64') }}"       # Raspberry Pi
     pc:  "{{ (ansible_architecture == 'x86_64') }}"         # Anything x86, might even be a Mac
+
   runs:
     ubuntu: true          # So far Ubuntu 22.04 LTS
     raspbian: false       # Planned for later
+
+  uses:
+    alacritty: "{{ (ansible_architecture == 'x86_64') }}"	# Alacritty on ARM is only avail as broken snap
+
+  nvidia:
+    install: "{{ deck.is.pc }}"
+    version: 525
