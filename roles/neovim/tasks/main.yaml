@@ -6,11 +6,12 @@
   become: true
   tags:
     - nv
+  when: deck.is.pc
 
-# I make it KISS-style for a start ...
-# Later, I intend to switch to the ppa as this has more recent versions of neovim
+# On a PC the PPA is a decent source. The main-repo holds a version
+# that is too old for NvChad.
 #
-- name: Install neovim from the apt repo
+- name: Install neovim from the apt repo (PC)
   apt:
     name: 
       - neovim
@@ -19,6 +20,18 @@
   become: true
   tags:
     - nv
+  when: deck.is.pc
+
+# On an ARM (RPi), the apt-installable version lacks the luajit
+# I got no clue why. So for the ARM we install a snap. This works.
+#
+- name: Install neovim via snap (RPi)
+  snap:
+    name: nvim
+    classic: true
+  become: true
+  tags: nv
+  when: deck.is.rpi
 
 - name: We need a config directory
   file:

@@ -3,4 +3,5 @@
 # We need the npm to install NvChad
 #
 dependencies:
+  - role: deck
   - role: node
