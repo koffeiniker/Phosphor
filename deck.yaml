@@ -23,7 +23,7 @@
   roles:
     - deck
     - regolith
-    - googlechrome
+    - browser
     - vscode
     - thunderbird
     - office

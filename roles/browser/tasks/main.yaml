@@ -1,5 +1,9 @@
 ---
 
+# Firefox is there by default
+# Google Chrome is only available for x86, so only install on a PC
+# Google Chromium is always available
+
 - name: Install Google repository key
   ansible.builtin.get_url:
     url: "https://dl.google.com/linux/linux_signing_key.pub"
@@ -32,4 +36,3 @@
     - chromium-browser
     state: latest
   become: true
-  when: deck.is.rpi
