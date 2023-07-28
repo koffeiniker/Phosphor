@@ -1,5 +1,10 @@
 TODO
 ====
+  - google-chrome rolle in browser umbenennen
+  - default browser firefox
+  - optionaler browser chrome
+  - optionaler browser chromium
+  - alternative für alacritty suchen (install oder anderes terminal)
   - remote reviewen, andere apps? Rustdesk?
   - vpns prüfen: wireguard, openvpn
   - prebuild-MPR? https://docs.makedeb.org/prebuilt-mpr/getting-started/#setting-up-the-repository
