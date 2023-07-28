@@ -1,6 +1,6 @@
 ---
 
-- name: "Install Nvidia Drivers ({{ deck.nvidia.install | ternary('enabled','disabled') }})"
+- name: "Manage Nvidia Drivers ({{ deck.nvidia.install | ternary('enabled','disabled') }})"
   apt:
     name:
       - "nvidia-driver-{{ deck.nvidia.version }}"

@@ -18,5 +18,5 @@ deck:
     alacritty: "{{ (ansible_architecture == 'x86_64') }}"	# Alacritty on ARM is only avail as broken snap
 
   nvidia:
-    install: "{{ deck.is.pc }}"
+    install: "{{ (ansible_architecture == 'x86_64') }}"
     version: 525

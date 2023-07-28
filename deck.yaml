@@ -44,6 +44,7 @@
     - role: alacritty
       tags: term
     - role: nvidia
+      tags: nvidia
     - role: ssg
       tags: ssg
     - role: system-stats
