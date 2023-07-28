@@ -3,18 +3,29 @@
     filename: alacritty-repo
     repo: "ppa:aslatter/ppa"
   become: true
+  when: deck.uses.alacritty
 
 - name: Install Alacritty
   apt:
     name:
       - alacritty
   become: true
+  when: deck.uses.alacritty
+
+- name: Install alacritty (snap)
+  snap:
+    name:
+      - alacritty
+    classic: true
+  become: true
+  when: deck.uses.alacritty
 
 - name: Configuration directory for Alacritty
   file:
     path: ~/.config/alacritty
     state: directory
     mode: '0755'
+  when: deck.uses.alacritty
 
 # https://github.com/eendroroy/alacritty-theme
 # 
@@ -25,10 +36,12 @@
     repo: https://github.com/eendroroy/alacritty-theme.git
     dest: ~/.config/alacritty-colorscheme
   tags: scheme
+  when: deck.uses.alacritty
 
 - name: Alacritty's configuration
   template:
     src: alacritty.yml
     dest: ~/.config/alacritty/alacritty.yml
     mode: '0644'
+  when: deck.uses.alacritty
     
