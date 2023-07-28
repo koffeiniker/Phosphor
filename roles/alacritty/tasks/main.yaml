@@ -10,7 +10,7 @@
     name:
       - alacritty
   become: true
-  when: deck.uses.alacritty
+  when: deck.uses.alacritty and deck.is.pc
 
 - name: Install alacritty (snap)
   snap:
@@ -18,7 +18,7 @@
       - alacritty
     classic: true
   become: true
-  when: deck.uses.alacritty
+  when: deck.uses.alacritty and deck.is.rpi
 
 - name: Configuration directory for Alacritty
   file:
