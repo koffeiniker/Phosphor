@@ -1,10 +1,10 @@
 ---
 
-- name: "Install Nvidia Drivers ({{ nvidia.install | ternary('enabled','disabled') }})"
+- name: "Install Nvidia Drivers ({{ deck.nvidia.install | ternary('enabled','disabled') }})"
   apt:
     name:
-      - "nvidia-driver-{{ nvidia.version }}"
-      - "nvidia-dkms-{{ nvidia.version }}"
-    state:  "{{ nvidia.install | ternary('present', 'absent') }}"
+      - "nvidia-driver-{{ deck.nvidia.version }}"
+      - "nvidia-dkms-{{ deck.nvidia.version }}"
+    state:  "{{ deck.nvidia.install | ternary('present', 'absent') }}"
   become: true
   tags: nvidia
