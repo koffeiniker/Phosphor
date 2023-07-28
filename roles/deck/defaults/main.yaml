@@ -16,6 +16,7 @@ deck:
 
   uses:
     alacritty: "{{ (ansible_architecture == 'x86_64') }}"	# Alacritty on ARM is only avail as broken snap
+    steam: false						# Steam is generally a security risk and not avail on arm
 
   nvidia:
     install: "{{ (ansible_architecture == 'x86_64') }}"
