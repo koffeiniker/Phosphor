@@ -58,6 +58,18 @@
     - role: retro
       tags: retro
 
+  pre_tasks:
+
+    - name: custom settings
+      ansible.builtin.include_vars:
+        dir: .
+        ignore_unknown_extensions: true
+        hash_behaviour: merge
+        extensions:
+          - 'custom'
+      tags:
+        - deck
+
   tasks:
 
     - name: add some python
