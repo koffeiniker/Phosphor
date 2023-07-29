@@ -2,6 +2,6 @@
 
 browser:
   firefox: firefox_firefox.desktop
-  chrome: google_chrome.desktop
+  chrome: google-chrome.desktop
   chromium: chromium_chromium.desktop
 
