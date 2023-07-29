@@ -1,0 +1,7 @@
+---
+
+browser:
+  firefox: firefox_firefox.desktop
+  chrome: google_chrome.desktop
+  chromium: chromium_chromium.desktop
+

@@ -36,3 +36,16 @@
     - chromium-browser
     state: latest
   become: true
+
+- name: Query the default web-browser
+  command:
+    cmd: xdg-settings get default-web-browser
+  register: browser_default
+  changed_when: false
+  tags: default-browser
+
+- name: "Set the default web-browser ({{ browser_default.stdout }} -> {{ browser[deck.uses.browser] }})"
+  command:
+    cmd: "xdg-settings set default-web-browser {{ browser[deck.uses.browser] }}"
+  when: browser_default.stdout != browser[deck.uses.browser]
+  tags: default-browser

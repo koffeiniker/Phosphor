@@ -4,9 +4,15 @@
 #
 - debug:
     var: ansible_architecture
+  tags: deck
 
 - debug:
     var: deck
+  tags: deck
+
+- debug:
+    var: default_browser
+  tags: deck
 
 # Check for supported architecture
 #
@@ -14,3 +20,4 @@
     msg: "Architecture is {{ deck.arch }} / {{ ansible_architecture }}"
   failed_when:
     (ansible_architecture != 'x86_64') and (ansible_architecture != 'aarch64')
+  tags: deck

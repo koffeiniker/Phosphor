@@ -1,5 +1,6 @@
 ---
 
+
 # This role defines some settings to be used as defaults.
 #
 deck:
@@ -8,7 +9,7 @@ deck:
 
   is:
     rpi: "{{ (ansible_architecture == 'aarch64') }}"       # Raspberry Pi
-    pc:  "{{ (ansible_architecture == 'x86_64') }}"         # Anything x86, might even be a Mac
+    pc:  "{{ (ansible_architecture == 'x86_64') }}"        # Anything x86, might even be a Mac
 
   runs:
     ubuntu: true          # So far Ubuntu 22.04 LTS
@@ -16,8 +17,10 @@ deck:
 
   uses:
     alacritty: "{{ (ansible_architecture == 'x86_64') }}"	# Alacritty on ARM is only avail as broken snap
-    steam: false						# Steam is generally a security risk and not avail on arm
+    steam: false                                          # Steam is generally a security risk and not avail on arm
+    browser: firefox                                      # Available brwosers defined in role browser
 
   nvidia:
     install: "{{ (ansible_architecture == 'x86_64') }}"
     version: 525
+
