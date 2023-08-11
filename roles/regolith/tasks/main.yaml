@@ -87,3 +87,34 @@
     - sunset-4.png
   notify: refresh regolith-look
 
+- name: Install our terminal ... terminator
+  apt:
+    name: terminator
+    state: latest
+  become: true
+  tags:
+    - term
+
+- name: Create the terminator config directory
+  file:
+    path: ~/.config/terminator
+    state: directory
+    mode: 0o755
+  tags:
+    - term
+
+- name: Copy the terminator-config
+  template:
+    src: terminator
+    dest: ~/.config/terminator/config
+    mode: "0644"
+  tags:
+    - term
+
+- name: Configure the preferred terminal
+  community.general.alternatives:
+    name: x-terminal-emulator
+    path: "{{ deck.term.emulator }}"
+  become: true
+  tags:
+    - term

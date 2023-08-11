@@ -17,6 +17,7 @@ deck:
 
   uses:
     alacritty: "{{ (ansible_architecture == 'x86_64') }}"	# Alacritty on ARM is only avail as broken snap
+    terminator: true
     steam: false                                          # Steam is generally a security risk and not avail on arm
     browser: firefox                                      # Available brwosers defined in role browser
 
@@ -24,3 +25,6 @@ deck:
     install: "{{ (ansible_architecture == 'x86_64') }}"
     version: 525
 
+  term:
+    emulator: /usr/bin/terminator
+    fontsize: 24
