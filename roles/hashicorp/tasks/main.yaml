@@ -26,6 +26,7 @@
     name:
       - vagrant
       - packer
+    state: latest
   become: true
   tags:
     - hc
