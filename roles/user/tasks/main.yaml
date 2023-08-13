@@ -13,6 +13,7 @@
 - name: You´ll need to have this fish ... ! (Douglas Adams)
   apt:
     name: fish
+    state: latest
   become: true
 
 

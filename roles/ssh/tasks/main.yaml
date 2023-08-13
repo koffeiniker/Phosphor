@@ -3,6 +3,7 @@
 - name: Install ssh
   apt:
     name: ssh
+    state: latest
   become: true
   tags:
     - ssh
