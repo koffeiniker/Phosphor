@@ -10,6 +10,7 @@
       - screen
       - curl
       - p7zip-full
+    state: latest
   become: true
 
 - name: Utilities ... ranger, htop, tmux, ncdu, thef*ck
@@ -19,6 +20,7 @@
       - htop
       - tmux
       - ncdu
+    state: latest
   become: true
 
 # Proposed by Tech Craft on youtube: https://www.youtube.com/watch?v=2OHrTQVlRMg
@@ -33,6 +35,7 @@
       - zoxide
       - bat
       - entr
+    state: latest
   become: true
 
 # Proposed by dev.to: https://dev.to/lissy93/cli-tools-you-cant-live-without-57f6
@@ -46,6 +49,7 @@
       - fdupes
       - jq
       - most
+    state: latest
   become: true
 
 - name: Some cosmetic toys
@@ -55,6 +59,7 @@
       - hollywood
       - neofetch
       - cpufetch
+    state: latest
   become: true
 
 - name: some tools -> 7z, nmap, net-tools (netstat)
@@ -63,6 +68,7 @@
       - p7zip
       - nmap
       - net-tools
+    state: latest
   become: true
   tags: tools
 
@@ -70,6 +76,7 @@
   apt:
     name:
       - speedtest-cli
+    state: latest
   become: true
   tags: internet
 
