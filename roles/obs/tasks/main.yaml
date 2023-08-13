@@ -4,6 +4,7 @@
   apt:
     name:
       - ffmpeg
+    state: latest
   become: true
 
 - name: How do we install OBS?
@@ -17,11 +18,11 @@
     state: "{{ obs_from_snap | ternary('absent','present')}}"
   become: true
 
-- name: "Assure the OBS package is {{ obs_from_snap | ternary('absent','present')}}"
+- name: "Assure the OBS package is {{ obs_from_snap | ternary('absent','latest')}}"
   apt:
     name:
       - obs-studio
-    state: "{{ obs_from_snap | ternary('absent','present')}}"
+    state: "{{ obs_from_snap | ternary('absent','latest')}}"
   become: true
 
 - name: "Assure the OBS Studio snap to be {{ obs_from_snap | ternary('present','absent')}}"
