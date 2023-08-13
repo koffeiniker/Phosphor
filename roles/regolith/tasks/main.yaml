@@ -18,8 +18,9 @@
 - name: Install regolith-desktop
   apt:
     name:
-    - regolith-desktop
-    - regolith-compositor-picom-glx
+      - regolith-desktop
+      - regolith-compositor-picom-glx
+    state: latest
   become: true
 
 - name: Install any possibly required fonts
@@ -29,6 +30,7 @@
       - fonts-source-code-pro-ttf
       - fonts-nerd-font-hack
       - fonts-nerd-font-ibmplexmono
+    state: latest
   become: true
   tags:
     - xregs
@@ -38,6 +40,7 @@
   apt:
     name:
       flameshot
+    state: latest
   become: true
   tags: flameshot
 
