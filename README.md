@@ -4,7 +4,7 @@ TODO
   - default browser firefox
   - optionaler browser chrome
   - optionaler browser chromium
-  - alternative für alacritty suchen (install oder anderes terminal)
+  - terraform, hab ich das wirklich vergessen?
   - remote reviewen, andere apps? Rustdesk?
   - vpns prüfen: wireguard, openvpn
   - prebuild-MPR? https://docs.makedeb.org/prebuilt-mpr/getting-started/#setting-up-the-repository
