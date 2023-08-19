@@ -60,6 +60,11 @@
 
   pre_tasks:
 
+    - name: no tags given
+      debug:
+        msg: registering no_tags variable
+      register: no_tags
+
     - name: custom settings
       ansible.builtin.include_vars:
         dir: .
@@ -69,6 +74,12 @@
           - 'custom'
       tags:
         - deck
+
+    - name: update apt cache
+      apt:
+        update_cache: true
+        upgrade: full
+      become: true
 
   tasks:
 
