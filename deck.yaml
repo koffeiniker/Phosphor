@@ -60,11 +60,32 @@
 
   pre_tasks:
 
+    # This tasks registers a variable when no tag has
+    # been given for the run. Any other tasks may then
+    # use this variable in a when-clause.
+    #
+    # Major benefit is to specify tasks that run
+    # exclusively when no_tags is not defined and 
+    # a given tag is. So the task would have:
+    # 
+    # tags:
+    #   - mytag
+    # when: no_tags is not defined
+    #
+    # A tasks equipped with an alike sequence will only
+    # run when the tag is specified.
+    #
     - name: no tags given
       debug:
         msg: registering no_tags variable
       register: no_tags
 
+    # Any file with a .custom ending will be included
+    # from the current directory. Files with such
+    # suffix will be ignored by git.
+    #
+    # Later I will change this to use a specific directory.
+    #
     - name: custom settings
       ansible.builtin.include_vars:
         dir: .
@@ -75,11 +96,16 @@
       tags:
         - deck
 
-    - name: update apt cache
+
+    # Pretty much to be expected, is it not?
+    #
+    - name: update apt cache and upgrade apt packages
       apt:
         update_cache: true
         upgrade: full
       become: true
+      tags:
+        - apt
 
   tasks:
 
@@ -91,6 +117,8 @@
       tags:
         - python
 
+    # In some future this is going to be chucked into a role.
+    #
     - name: Install a selection of snap-apps
       snap:
         name:
