@@ -23,5 +23,5 @@ if [ ! -f ~/.ssh/id_rsa ]
 then
 	ssh-keygen
 else
-	echo "Skipped generation of ssh-key. Key exists."
+	echo "Skipped generation of ssh-key. Key already exists."
 fi
