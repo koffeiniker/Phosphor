@@ -1,30 +1,48 @@
 ---
 
+# This role defines some settings to be used as defaults in various roles.
+# In order to make these settings available, the rsp. roles must depend on this role.
 
-# This role defines some settings to be used as defaults.
-#
+
+
 deck:
 
+  # Architecture naming is a good example of diversity, I failed to figure out
+  # when to call it which name ("x86_64, amd64, aarch64, arm64).
+  # I simply avoided fiddling with this, using the settings below after vertigo had finally hit me.
+  #
   arch: "{{ (ansible_architecture == 'aarch64') | ternary('arm64', 'amd64')}}"
 
   is:
-    rpi: "{{ (ansible_architecture == 'aarch64') }}"       # Raspberry Pi
-    pc:  "{{ (ansible_architecture == 'x86_64') }}"        # Anything x86, might even be a Mac
+    rpi: "{{ (ansible_architecture == 'aarch64') }}"      # Raspberry Pi
+    pc:  "{{ (ansible_architecture == 'x86_64') }}"       # Anything x86, might even be a Mac
 
   runs:
-    ubuntu: true          # So far Ubuntu 22.04 LTS
+    ubuntu: true          # So far Ubuntu 22.04 LTS, other versions might work with minor modification but
+                          # only 22.04 is tested.
     raspbian: false       # Planned for later
 
+
+
   uses:
-    alacritty: "{{ (ansible_architecture == 'x86_64') }}"	# Alacritty on ARM is only avail as broken snap
-    terminator: true
-    steam: false                                          # Steam is generally a security risk and not avail on arm
-    browser: firefox                                      # Available brwosers defined in role browser
+    alacritty: "{{ (ansible_architecture == 'x86_64') }}" # Alacritty on ARM is only avail as broken snap
+    terminator: true                                      # After some hassle with Alacritty on rpi and the complete
+                                                          # desaster with tmux, terminator appeared to be a valid way out.
+    steam: false                                          # Steam is generally a security risk and not available on ARM
+    browser: firefox                                      # Available browsers defined in role browser
+
+
 
   nvidia:
-    install: "{{ (ansible_architecture == 'x86_64') }}"
+    install: "{{ (ansible_architecture == 'x86_64') }}"   # nvidia drivers on ARM are somewhat pointless.
+                                                          # This setting should be in the nvidia role, but I wanted
+                                                          # to allow a plain "no" for people having trouble with
+                                                          # legacy drivers.
     version: 525
+
+
 
   term:
     emulator: /usr/bin/terminator
     fontsize: 24
+
