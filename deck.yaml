@@ -60,26 +60,6 @@
 
   pre_tasks:
 
-    # This tasks registers a variable when no tag has
-    # been given for the run. Any other tasks may then
-    # use this variable in a when-clause.
-    #
-    # Major benefit is to specify tasks that run
-    # exclusively when no_tags is not defined and 
-    # a given tag is. So the task would have:
-    # 
-    # tags:
-    #   - mytag
-    # when: no_tags is not defined
-    #
-    # A tasks equipped with an alike sequence will only
-    # run when the tag is specified.
-    #
-    - name: no tags given
-      debug:
-        msg: registering no_tags variable
-      register: no_tags
-
     # Any file with a .custom ending will be included
     # from the current directory. Files with such
     # suffix will be ignored by git.
