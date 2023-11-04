@@ -97,6 +97,15 @@
       tags:
         - python
 
+    - name: stop apt nagging about esm apps
+      apt:
+        name:
+          - ubuntu-advantage-tools
+        state: absent
+      become: true
+      tags:
+        - nopro
+
     # In some future this is going to be chucked into a role.
     #
     - name: Install a selection of snap-apps
