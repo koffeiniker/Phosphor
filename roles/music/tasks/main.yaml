@@ -17,6 +17,7 @@
       - mplayer
       - cmus
       - beets
+      - beets-doc
   become: true
   tags:
     - radio
