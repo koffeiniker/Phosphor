@@ -1,25 +1,5 @@
 ---
 
-- name: gimp / imagemagick
-  apt:
-    name:
-      - gimp
-      - imagemagick
-  become: true
-  tags:
-    - img
-
-- name: VLC & ffmpeg
-  apt:
-    name: 
-      - vlc
-      - ffmpeg
-  become: true
-  tags:
-    - vlc
-    - ffmpeg
-    - media
-
 - name: Shotcut Video Editor
   apt:
     name: shotcut
@@ -52,12 +32,3 @@
     - flowblade
     - media
   notify: autoremove
-
-- name: Audacity
-  apt:
-    name:
-      - audacity
-  become: true
-  tags: 
-    - audacity
-    - audio

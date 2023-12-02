@@ -32,3 +32,8 @@
     state: "{{ obs_from_snap | ternary('present','absent')}}"
   become: true
 
+- name: "screenkey"
+  apt:
+    name: screenkey
+    state: latest
+  become: true

@@ -1,0 +1,21 @@
+---
+
+- name: VLC & ffmpeg
+  apt:
+    name: 
+      - vlc
+      - ffmpeg
+  become: true
+  tags:
+    - vlc
+    - ffmpeg
+    - media
+
+- name: Audacity
+  apt:
+    name:
+      - audacity
+  become: true
+  tags: 
+    - audacity
+    - audio

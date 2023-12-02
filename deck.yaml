@@ -31,11 +31,9 @@
     - emacs
     - role: ssh
       tags: ssh
-    - neovim
     - role: fail2ban
       tags: fail2ban
-    - role: obs
-      tags: obs
+    - neovim
     - communication
     - virtualbox
     - hashicorp

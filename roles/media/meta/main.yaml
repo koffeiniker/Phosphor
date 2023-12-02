@@ -1,0 +1,7 @@
+---
+
+dependencies:
+  - role: media-main
+  - role: media-image
+  - role: media-stream
+  - role: media-vidcut

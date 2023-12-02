@@ -1,0 +1,10 @@
+---
+
+- name: gimp / imagemagick
+  apt:
+    name:
+      - gimp
+      - imagemagick
+  become: true
+  tags:
+    - img

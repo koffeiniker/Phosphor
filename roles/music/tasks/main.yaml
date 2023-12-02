@@ -9,13 +9,14 @@
   tags:
     - player
 
-# And then let us have some CLI players
+# And then let us have some CLI players and tools
 #
-- name: Mplayer
+- name: Mplayer, cmus and beets
   apt:
     name: 
       - mplayer
       - cmus
+      - beets
   become: true
   tags:
     - radio
