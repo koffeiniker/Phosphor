@@ -2,23 +2,44 @@
 
 # Let us have a GUI player
 #
-- name: Rhythmbox
+- name: Rhythmbox - for local media
   apt:
     name: rhythmbox
   become: true
   tags:
     - player
+    - music
 
-# And then let us have some CLI players and tools
+# Let us have a player for subsonic servers like navidrome
 #
-- name: Mplayer, cmus and beets
+- name: Sublime-Music - for subsonic/navidrome
+  apt:
+    name: sublime-music
+  become: true
+  tags:
+    - subsonic
+    - player
+    - music
+
+# And then let us have some CLI players
+#
+- name: Mplayer, cmus - CLI players
   apt:
     name: 
       - mplayer
       - cmus
-      - beets
-      - beets-doc
   become: true
   tags:
     - radio
     - player
+    - music
+
+- name: beets - organize music-collections by tagging
+  apt:
+    name:
+      - beets
+      - beets-doc
+  become: true
+  tags:
+    - music-tools
+    - music
