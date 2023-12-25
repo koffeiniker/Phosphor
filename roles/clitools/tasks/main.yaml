@@ -13,6 +13,19 @@
     state: latest
   become: true
 
+# "nala" is a frontend for apt: 
+#   - much better optics
+#   - faster by optimizing the mirrors
+#   - concurrent downloads
+# Regrettably it does not help for use with Ansible.
+#
+- name: nala ... frontend for apt
+  apt:
+    name:
+      - nala
+    state: latest
+  become: true
+
 - name: Utilities ... ranger, htop, tmux, ncdu, thef*ck
   apt:
     name: 
