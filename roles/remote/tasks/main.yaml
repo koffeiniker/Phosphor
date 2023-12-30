@@ -4,6 +4,7 @@
   apt:
     name:
       - vinagre
+    state: latest
   become: true
 
 - name: Remmina
@@ -12,4 +13,5 @@
       - remmina
       - remmina-plugin-vnc
       - remmina-plugin-rdp
+    state: latest
   become: true

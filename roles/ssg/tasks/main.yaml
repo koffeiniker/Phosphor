@@ -3,6 +3,7 @@
 - name: Hugo
   apt:
     name: hugo
+    state: latest
   become: true
 
 # TODO: use pip to install
@@ -18,4 +19,5 @@
       - mkdocs-doc
       - mkdocs-bootstrap
       - mkdocs-nature
+    state: latest
   become: true

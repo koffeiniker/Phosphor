@@ -47,4 +47,5 @@
   apt:
     name:
       - ctop
+    state: latest
   become: true

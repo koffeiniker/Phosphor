@@ -5,6 +5,7 @@
 - name: Rhythmbox - for local media
   apt:
     name: rhythmbox
+    state: latest
   become: true
   tags:
     - player
@@ -15,6 +16,7 @@
 - name: Sublime-Music - for subsonic/navidrome
   apt:
     name: sublime-music
+    state: latest
   become: true
   tags:
     - subsonic
@@ -28,6 +30,7 @@
     name: 
       - mplayer
       - cmus
+    state: latest
   become: true
   tags:
     - radio
@@ -39,6 +42,7 @@
     name:
       - beets
       - beets-doc
+    state: latest
   become: true
   tags:
     - music-tools

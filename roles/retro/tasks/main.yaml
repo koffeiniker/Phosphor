@@ -3,6 +3,7 @@
 - name: "A retro-terminal with CRT effects ... cool!"
   apt:
     name: cool-retro-term
+    state: latest
   become: true
 
 - name: Assure the local i3 config partials directory

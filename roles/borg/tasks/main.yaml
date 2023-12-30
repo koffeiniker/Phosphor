@@ -6,4 +6,5 @@
       - borgbackup
       - borgbackup-doc
       - borgmatic
+    state: latest
   become: true

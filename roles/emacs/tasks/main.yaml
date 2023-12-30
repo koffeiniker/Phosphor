@@ -13,4 +13,5 @@
     name:
       - emacs
       - elpa-markdown-mode
+    state: latest
   become: true

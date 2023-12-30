@@ -5,6 +5,7 @@
     name: 
       - vlc
       - ffmpeg
+    state: latest
   become: true
   tags:
     - vlc
@@ -15,6 +16,7 @@
   apt:
     name:
       - audacity
+    state: latest
   become: true
   tags: 
     - audacity

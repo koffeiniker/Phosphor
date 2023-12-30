@@ -9,6 +9,7 @@
   apt:
     name:
       - alacritty
+    state: latest
   become: true
   when: deck.uses.alacritty and deck.is.pc
 

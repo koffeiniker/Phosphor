@@ -1,18 +1,19 @@
+- name: some monitoring and networking
+  apt:
+    name:
+      - glances
+      - glances-doc
+      - btop
+    state: latest
+  become: true
+  tags: stats
 
-    - name: some monitoring and networking
-      apt:
-        name:
-          - glances
-          - glances-doc
-          - btop
-      become: true
-      tags: stats
-
-    - name: ntopng needs manual config or risk a security issue!
-      apt:
-        name:
-          - ntopng
-          - ntopng-doc
-      become: true
-      tags: stats
-      when: ntopng_enabled
+- name: ntopng needs manual config or risk a security issue!
+  apt:
+    name:
+      - ntopng
+      - ntopng-doc
+    state: latest
+  become: true
+  tags: stats
+  when: ntopng_enabled

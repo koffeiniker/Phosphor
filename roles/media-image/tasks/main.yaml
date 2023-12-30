@@ -5,6 +5,7 @@
     name:
       - gimp
       - imagemagick
+    state: latest
   become: true
   tags:
     - img

@@ -3,6 +3,7 @@
 - name: Install Thunderbird
   apt:
     name: 
-    - thunderbird-gnome-support
-    - thunderbird-locale-de
+      - thunderbird-gnome-support
+      - thunderbird-locale-de
+    state: latest
   become: true

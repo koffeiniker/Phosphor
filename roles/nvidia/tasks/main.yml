@@ -5,6 +5,6 @@
     name:
       - "nvidia-driver-{{ deck.nvidia.version }}"
       - "nvidia-dkms-{{ deck.nvidia.version }}"
-    state:  "{{ deck.nvidia.install | ternary('present', 'absent') }}"
+    state:  "{{ deck.nvidia.install | ternary('latest', 'absent') }}"
   become: true
   tags: nvidia

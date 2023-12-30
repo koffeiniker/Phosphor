@@ -25,7 +25,7 @@
 - name: Install Google Chrome
   apt:
     name:
-    - google-chrome-stable
+      - google-chrome-stable
     state: latest
   become: true
   when: deck.is.pc
@@ -33,7 +33,7 @@
 - name: Install Chromium (all we have on an RPi)
   apt:
     name:
-    - chromium-browser
+      - chromium-browser
     state: latest
   become: true
 

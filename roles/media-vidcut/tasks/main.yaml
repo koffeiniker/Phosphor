@@ -3,7 +3,7 @@
 - name: Shotcut Video Editor
   apt:
     name: shotcut
-    state: "{{ media.shotcut | default(false) | ternary ('present', 'absent') }}"
+    state: "{{ media.shotcut | default(false) | ternary ('latest', 'absent') }}"
   become: true
   tags:
     - shotcut
@@ -15,7 +15,7 @@
     name: 
       - openshot-qt
       - openshot-qt-doc
-    state: "{{ media.openshot | default(false) | ternary ('present', 'absent') }}"
+    state: "{{ media.openshot | default(false) | ternary ('latest', 'absent') }}"
   become: true
   tags:
     - openshot
@@ -26,7 +26,7 @@
   apt:
     name: 
       - flowblade
-    state: "{{ media.flowblade | default(false) | ternary ('present', 'absent') }}"
+    state: "{{ media.flowblade | default(false) | ternary ('latest', 'absent') }}"
   become: true
   tags:
     - flowblade

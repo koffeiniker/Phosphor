@@ -24,5 +24,6 @@
 - name: Install vscode
   apt:
     name:
-    - code
+      - code
+    state: latest
   become: true

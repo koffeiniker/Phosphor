@@ -81,6 +81,7 @@
       apt:
         update_cache: true
         upgrade: full
+        state: latest
       become: true
       tags:
         - apt
@@ -91,6 +92,7 @@
       apt:
         name:
           - python3-venv
+        state: latest
       become: true
       tags:
         - python

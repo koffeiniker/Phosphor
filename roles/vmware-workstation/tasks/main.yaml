@@ -9,4 +9,5 @@
       - libxi6
       - build-essential
       - gnome-icon-theme
+    state: latest
   become: true
